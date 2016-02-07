@@ -12,7 +12,7 @@ I have used the quickstart.rb example in this
 [link](https://developers.google.com/google-apps/calendar/quickstart/ruby) as a 
 starting point.
 
-The file that I need to run is the **calendar_pdf_exported.rb**. Before runnning
+The file that I need to run is the **calendar_pdf_exporter.rb**. Before runnning
 the file you need to place client_secret.json under the project root folder.
 This first time that you run the file it creates the file 
 ~/.credentials/calendar_ruby_quickstart.yml which contains data for 

@@ -86,3 +86,4 @@ build/
 
 client_secret.json
 Gemfile.lock
+pdfs/*

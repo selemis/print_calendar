@@ -4,7 +4,7 @@ require 'yaml/store'
 module Functions
 
   CONFIGURATION_PATH = File.join(Dir.home, '.credentials',
-                                 'calendar-ruby-configuration.yaml')
+                                 'calendar-ruby-configuration.yml')
 
   def read_calendars
     store = YAML::Store.new(CONFIGURATION_PATH)

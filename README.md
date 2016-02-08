@@ -15,14 +15,14 @@ starting point.
 The file that I need to run is the **calendar_pdf_exporter.rb**. Before runnning
 the file you need to place client_secret.json under the project root folder.
 This first time that you run the file it creates the file 
-~/.credentials/calendar_ruby_quickstart.yml which contains data for 
+~/.credentials/calendar-ruby-quickstart.yml which contains data for 
 authenticating with Google Calendar. The next time it will read this file and use
 its data for the authentication process.
 
 I also use a yml file that contains the name of the calendar as a key and the 
 google calendar id as a value. The file is 
-~/.credentials/calendar_ruby_configuration.yml and it has the following format:
-I 
+~/.credentials/calendar-ruby-configuration.yml and it has the following format:
+ 
 ```
 ---
 :calendars:

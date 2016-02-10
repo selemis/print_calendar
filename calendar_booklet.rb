@@ -17,7 +17,7 @@ class CalendarBooklet < Prawn::Document
 
       font('Ubuntu-Mono', size: 30) do
         stroke_color 'ff0000'
-        text "#{item.from.strftime('%A %B %Y')}", color: '0000FF', align: :center, :mode => :stroke
+        text "#{item.from.strftime('%A %d %B %Y')}", color: '0000FF', align: :center, :mode => :stroke
       end
 
       # stroke_axis

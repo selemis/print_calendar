@@ -25,8 +25,14 @@ google calendar id as a value. The file is
  
 ```
 ---
-:calendars:
-  :primary: primary
+:calendars:                                                                      
+   :primary:                                                                      
+     :id: primary                                                                 
+     :single_events: true                                                         
+     :max_results: 2500                                                           
+     :time_min: '2014-01-01T2:00:00-00:00'                                        
+     :time_max: '2016-12-31T2:00:00-00:00'                                        
+     :order_by: startTime                                                         
 ```
 
 You can either create that file manually or use the save_calendars method in 

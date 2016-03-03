@@ -4,6 +4,7 @@ require_relative 'calendar_print'
 require_relative 'authorizable'
 require_relative 'functions'
 require 'awesome_print'
+require 'active_support/core_ext/hash/keys'
 
 include Authorizable
 include Functions
@@ -15,11 +16,9 @@ service = Google::Apis::CalendarV3::CalendarService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
-read_calendars.each do |name, calendar_id|
-
-  response = service.list_events(calendar_id,
-                                 single_events: true,
-                                 order_by: 'startTime')
+read_calendars.each do |name, calendar|
+  id = calendar.delete(:id)
+  response = service.list_events(id, calendar.symbolize_keys!)
 
   calendar_prints = response.items.map do |item|
     CalendarPrint.from_hash(

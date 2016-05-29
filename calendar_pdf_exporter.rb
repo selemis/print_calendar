@@ -14,5 +14,6 @@ end
 
 extractor = CalendarExtractor.new
 extractor.extract.each do |name, calendar_print|
-  export_pdf(name, calendar_print)
+  filter = calendar_print.select {|print| print.title.downcase.include?('hatta')}
+  export_pdf(name, filter)
 end

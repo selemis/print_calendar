@@ -16,6 +16,9 @@ service = Google::Apis::CalendarV3::CalendarService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
+cert_path = Gem.loaded_specs['google-api-client'].full_gem_path+'/lib/cacerts.pem'
+ENV['SSL_CERT_FILE'] = cert_path
+
 read_calendars.each do |name, calendar|
   id = calendar.delete(:id)
   response = service.list_events(id, calendar.symbolize_keys!)

@@ -18,6 +18,8 @@ class CalendarExtractor
     @service = Google::Apis::CalendarV3::CalendarService.new
     @service.client_options.application_name = APPLICATION_NAME
     @service.authorization = authorize
+    cert_path = Gem.loaded_specs['google-api-client'].full_gem_path+'/lib/cacerts.pem'
+    ENV['SSL_CERT_FILE'] = cert_path
   end
 
   ##

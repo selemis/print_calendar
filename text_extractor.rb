@@ -2,12 +2,13 @@ require_relative 'calendar_extractor'
 
 template = %Q(
 ### <%=title%>
-<%=from%> to <%=to%>
+<%=from.strftime('%d-%m-%Y %H:%M')%> to <%=to.strftime('%d-%m-%Y %H:%M')%>
 
 <%=description%>
 
-)
+-----
 
+)
 
 extractor = CalendarExtractor.new
 extractor.extract.each do |name, calendar_print|

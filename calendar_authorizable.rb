@@ -1,7 +1,8 @@
-require_relative 'authorizable'
+require 'google_authorizer'
+require 'google/apis/calendar_v3'
 
 module CalendarAuthorizable
-  include Authorizable
+  include GoogleAuthorizer
 
   SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
 

@@ -1,11 +1,12 @@
 require_relative 'drive_authorizable'
 require 'rake'
 require 'fileutils'
+require 'google/apis/calendar_v3'
 
 class Drive
   include DriveAuthorizable
 
-  FOLDER = '/media/selemis/7a1977c9-45ea-4d47-abc7-10dede08c0c9/new/phone'
+  FOLDER = '/home/selemis/Pictures/theoni_phone'
 
   def doit
 
@@ -15,25 +16,24 @@ class Drive
     service.authorization = authorize
 
 
-     Rake::FileList.new("#{FOLDER}/*.mp4").pathmap('%f').each do |f|
+     Rake::FileList.new("#{FOLDER}/*.jpg").pathmap('%f').each do |f|
        response = service.list_files(q: %(name contains "#{f}") )
        puts 'Files:'
        if response.files.empty?
          puts "No files found for #{f}"
-         FileUtils.mv "#{FOLDER}/#{f}", "#{FOLDER}/keep/#{f}", verbose: true
+         # FileUtils.mv "#{FOLDER}/#{f}", "#{FOLDER}/keep/#{f}", verbose: true
        end
        response.files.each do |file|
          puts "#{file.name} (#{file.id})"
        end
 
        if response.files.any?
-         FileUtils.mv "#{FOLDER}/#{f}", "#{FOLDER}/processed/#{f}", verbose: true
+         # FileUtils.mv "#{FOLDER}/#{f}", "#{FOLDER}/processed/#{f}", verbose: true
        end
 
      end
 
   end
-
 
 end
 

@@ -1,8 +1,8 @@
-require_relative 'authorizable'
+require 'google_authorizer'
 require 'google/apis/drive_v3'
 
 module DriveAuthorizable
-  include Authorizable
+  include GoogleAuthorizer
 
   SCOPE = Google::Apis::DriveV3::AUTH_DRIVE_METADATA_READONLY
 

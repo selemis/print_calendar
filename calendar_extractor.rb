@@ -1,4 +1,4 @@
-require_relative 'authorizable'
+require_relative 'calendar_authorizable'
 require_relative 'calendar_print'
 require_relative 'functions'
 require 'awesome_print'
@@ -8,7 +8,7 @@ require 'active_support/core_ext/hash/keys'
 # Extract information from google calendar
 
 class CalendarExtractor
-  include Authorizable
+  include CalendarAuthorizable
   include Functions
 
   APPLICATION_NAME = 'Google Calendar API Ruby Quickstart'

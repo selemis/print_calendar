@@ -12,8 +12,8 @@ template = %Q(
 
 extractor = CalendarExtractor.new
 extractor.extract.each do |name, calendar_print|
-  filter = calendar_print.select {|print| print.title.downcase.include?('hatta')}
-
+  # filter = calendar_print.select {|print| print.title.downcase.include?('hatta')}
+  filter = calendar_print
   renderer = ERB.new(template)
 
   filter.each do |pc|

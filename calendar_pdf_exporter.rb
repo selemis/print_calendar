@@ -1,7 +1,7 @@
-require_relative 'calendar_booklet'
-require_relative 'calendar_summary'
-require_relative 'calendar_print'
-require_relative 'calendar_extractor'
+require_relative 'lib/print/calendar_booklet'
+require_relative 'lib/print/calendar_summary'
+require_relative 'lib/calendar_gateway/calendar_print'
+require_relative 'lib/calendar_gateway/calendar_extractor'
 
 def export_pdf(name, calendar_prints)
   begin

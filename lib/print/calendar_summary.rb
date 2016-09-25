@@ -2,7 +2,7 @@
 
 require 'prawn'
 require 'prawn/table'
-require_relative 'document_functions'
+require_relative '../../lib/helper/document_functions'
 
 class CalendarSummary < Prawn::Document
   include DocumentFunctions

@@ -1,6 +1,6 @@
-require_relative 'calendar_authorizable'
+require_relative '../../lib/calendar_authorizable'
 require_relative 'calendar_print'
-require_relative 'functions'
+require_relative '../../lib/helper/functions'
 require 'awesome_print'
 require 'active_support/core_ext/hash/keys'
 

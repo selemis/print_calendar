@@ -1,7 +1,7 @@
 #encoding utf-8
 
 require 'prawn'
-require_relative 'document_functions'
+require_relative '../../lib/helper/document_functions'
 
 class CalendarBooklet < Prawn::Document
   include DocumentFunctions

@@ -1,4 +1,4 @@
-require_relative 'calendar_extractor'
+require_relative 'lib/calendar_gateway/calendar_extractor'
 
 template = %Q(
 ### <%=title%>

@@ -8,20 +8,18 @@ print them in a suitable format.
 
 ## Notes
 
-I have used the quickstart.rb example in this 
-[link](https://developers.google.com/google-apps/calendar/quickstart/ruby) as a 
-starting point.
+This application uses my [google_authorizer](https://github.com/selemis/google_authorizer).
 
-The file that I need to run is the **calendar_pdf_exporter.rb**. Before runnning
-the file you need to place client_secret.json under the project root folder.
-This first time that you run the file it creates the file 
-~/.credentials/calendar-ruby-quickstart.yml which contains data for 
-authenticating with Google Calendar. The next time it will read this file and use
-its data for the authentication process.
+There are two kinds of exporters at the moment. One of them export calendar event data to pdf files and the other
+prints them on the command line.
 
-I also use a yml file that contains the name of the calendar as a key and the 
-google calendar id as a value. The file is 
-~/.credentials/calendar-ruby-configuration.yml and it has the following format:
+For pdfs, the file that I need to run is the `calendar_pdf_exporter.rb`.
+For the command line output, the file I need to run is the `cli_exporter.rb` 
+ 
+Before runnning the file you need to place client_secret.json under the project root folder.
+
+I also use a yml file that contains the name of the calendar as a key and the google calendar id as a value. The file is
+`~/.credentials/calendar-ruby-configuration.yml` and it has the following format:
  
 ```
 ---
@@ -35,8 +33,7 @@ google calendar id as a value. The file is
      :order_by: startTime                                                         
 ```
 
-You can either create that file manually or use the save_calendars method in 
-Functions module.
+You can either create that file manually or use the save_calendars method in Functions module.
 
 The script will iterate over those calendars, it will extract the events and it
 will product 2 pdf files for each calendar. This first is a summary that it will

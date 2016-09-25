@@ -1,6 +1,6 @@
 require_relative 'lib/print/calendar_booklet'
 require_relative 'lib/print/calendar_summary'
-require_relative 'lib/calendar_gateway/calendar_print'
+require_relative 'lib/calendar_gateway/calendar_printable_data'
 require_relative 'lib/calendar_gateway/calendar_extractor'
 
 def export_pdf(name, calendar_prints)

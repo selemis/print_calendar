@@ -1,4 +1,4 @@
-CalendarPrint = Struct.new(:title, :description, :from, :to) do
+CalendarPrintableData = Struct.new(:title, :description, :from, :to) do
 
   def self.from_hash(attributes)
     instance = self.new

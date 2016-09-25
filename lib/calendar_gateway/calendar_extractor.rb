@@ -1,5 +1,5 @@
 require_relative '../../lib/calendar_authorizable'
-require_relative 'calendar_print'
+require_relative 'calendar_printable_data'
 require_relative '../../lib/helper/functions'
 require 'awesome_print'
 require 'active_support/core_ext/hash/keys'
@@ -45,10 +45,10 @@ class CalendarExtractor
 
   def to_calendar_prints(response)
     response.items.map do |item|
-      CalendarPrint.from_hash(title: item.summary,
-                               from: parse_date(item.start),
-                                 to: parse_date(item.end),
-                        description: item.description || '')
+      CalendarPrintableData.from_hash(title: item.summary,
+                                      from: parse_date(item.start),
+                                      to: parse_date(item.end),
+                                      description: item.description || '')
     end
 
   end

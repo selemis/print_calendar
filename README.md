@@ -16,7 +16,7 @@ prints them on the command line.
 For pdfs, the file that I need to run is the `calendar_pdf_exporter.rb`.
 For the command line output, the file I need to run is the `cli_exporter.rb` 
  
-Before runnning the file you need to place client_secret.json under the project root folder.
+Before running the file you need to place client_secret.json under the project root folder.
 
 I also use a yml file that contains the name of the calendar as a key and the google calendar id as a value. The file is
 `~/.credentials/calendar-ruby-configuration.yml` and it has the following format:
